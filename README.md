@@ -48,30 +48,31 @@ src/main/java/
 
 1. Запрос с числом:
 
-```
-GET /doubling?number=7
-```
+    ```
+    GET /doubling?value=7
+    ```
+    
+    Ответ (JSON):
+    
+    ```json
+    {
+      "id": 1,
+      "doublingValue": 14,
+      "message": "Удвоенное значение: 14"
+    }
+    ```
 
-Ответ (JSON):
-
-```json
-{
-  "id": 1,
-  "doublingValue": 14,
-  "message": "Удвоенное значение: 14"
-}
-```
 2. Запрос без параметра:
 
-```
-GET /doubling
-```
-Ответ (JSON):
-
-```json
-{
-  "id": 2,
-  "doublingValue": 0,
-  "message": "Удвоенное значение: 0"
-}
-```
+    ```
+    GET /doubling
+    ```
+    Ответ (JSON):
+    
+    ```json
+    {
+      "id": 2,
+      "doublingValue": 0,
+      "message": "Удвоенное значение: 0"
+    }
+    ```
