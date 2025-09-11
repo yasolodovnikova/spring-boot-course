@@ -65,59 +65,59 @@ src/main/java/
 
 1. Запрос с числом:
 
-```
-GET /doubling?number=7
-```
-
-Ответ (JSON):
-
-```json
-{
-  "id": 1,
-  "doublingValue": 14,
-  "message": "Удвоенное значение: 14"
-}
-```
+    ```
+    GET /doubling?value=7
+    ```
+    
+    Ответ (JSON):
+    
+    ```json
+    {
+      "id": 1,
+      "doublingValue": 14,
+      "message": "Удвоенное значение: 14"
+    }
+    ```
 
 2. Запрос без параметра:
 
-```
-GET /doubling
-```
-
-Ответ (JSON):
-
-```json
-{
-  "id": 2,
-  "doublingValue": 0,
-  "message": "Удвоенное значение: 0"
-}
-```
+    ```
+    GET /doubling
+    ```
+    
+    Ответ (JSON):
+    
+    ```json
+    {
+      "id": 2,
+      "doublingValue": 0,
+      "message": "Удвоенное значение: 0"
+    }
+    ```
 
 3. Запрос к тестовому методу:
 
-```
-GET /test
-```
-
-Ответ:
-
-```
-Тест логгирования
-```
+    ```
+    GET /test
+    ```
+    
+    Ответ:
+    
+    ```
+    Тест логгирования
+    ```
 
 4. Пример логов при вызове /test:
 
-```
-INFO  — Вызов метода: getTest
-INFO  — Входные параметры: []
-INFO  — Результат: Тест логгирования
-INFO  — Завершение метода: getTest
-```
+    ```
+    INFO  — Вызов метода: getTest
+    INFO  — Входные параметры: []
+    INFO  — Результат: Тест логгирования
+    INFO  — Завершение метода: getTest
+    ```
 
 5. Если в методе произойдёт ошибка:
-
-```
-ERROR — java.lang.RuntimeException: <сообщение>
-```
+    
+    ```
+    ERROR — java.lang.RuntimeException: <сообщение>
+    ```
