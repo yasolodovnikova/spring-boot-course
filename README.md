@@ -14,3 +14,8 @@
 
 - **Расширенная реализация** — с сервисом, интерфейсом и возвращаемым объектом:  
   [module-01-doubling-extended](https://github.com/yasolodovnikova/spring-boot-course/tree/module-01-doubling-extended)
+
+## Задание 2
+
+- **Основная реализация** - по заданию:  
+  [module-02-loggable](https://github.com/yasolodovnikova/spring-boot-course/tree/module-02-loggable)
