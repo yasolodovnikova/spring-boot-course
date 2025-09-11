@@ -26,4 +26,9 @@ public class DoublingController {
     public Doubling doubling(@RequestParam(required = false) Integer value) {
         return doublingService.getDoubling(value);
     }
+
+    @GetMapping("/test")
+    public String test() {
+        return doublingService.getTest();
+    }
 }
