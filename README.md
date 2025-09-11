@@ -17,5 +17,5 @@
 
 ## Задание 2
 
-- **Основная реализация** - по заданию:  
+- **Основная реализация** — по заданию:  
   [module-02-loggable](https://github.com/yasolodovnikova/spring-boot-course/tree/module-02-loggable)
