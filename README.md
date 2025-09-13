@@ -19,3 +19,8 @@
 
 - **Основная реализация** — по заданию:  
   [module-02-loggable](https://github.com/yasolodovnikova/spring-boot-course/tree/module-02-loggable)
+
+## Задание 3
+
+- **Основная реализация** — по заданию:  
+  [module-03-task-crud](https://github.com/yasolodovnikova/spring-boot-course/tree/module-03-task-crud)
