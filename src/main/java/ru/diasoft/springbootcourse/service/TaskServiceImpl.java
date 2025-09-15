@@ -1,56 +1,63 @@
 package ru.diasoft.springbootcourse.service;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.diasoft.springbootcourse.dao.TaskRepository;
 import ru.diasoft.springbootcourse.domain.Task;
+import ru.diasoft.springbootcourse.dto.TaskDto;
+import ru.diasoft.springbootcourse.dto.converter.TaskConverter;
 import ru.diasoft.springbootcourse.exception.NoSuchTaskException;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class TaskServiceImpl implements TaskService {
 
-    private final List<Task> taskList;
-    private final AtomicLong atomicLong;
+    private final TaskRepository repository;
 
-    public TaskServiceImpl() {
-        this.taskList = new ArrayList<>();
-        this.atomicLong = new AtomicLong();
+    @Override
+    public TaskDto create(TaskDto taskDto) {
+        Task task = TaskConverter.toEntity(taskDto);
+
+        return TaskConverter.toDto(repository.save(task));
     }
 
     @Override
-    public Task create(Task task) {
-        task.setId(atomicLong.incrementAndGet());
-        taskList.add(task);
-        return task;
+    public List<TaskDto> getAll() {
+        return repository.findAll().stream()
+                .map(TaskConverter::toDto)
+                .collect(Collectors.toList());
     }
 
     @Override
-    public List<Task> getAll() {
-        return taskList;
+    public TaskDto getById(long id) {
+        Optional<Task> optionalTask = repository.findById(id);
+
+        if (optionalTask.isEmpty()) {
+            throw new NoSuchTaskException("Task with id " + id + " not found!");
+        }
+
+        return TaskConverter.toDto(optionalTask.get());
     }
 
     @Override
-    public Task getById(long id) {
-        return taskList.stream()
-                .filter(task -> task.getId() == id)
-                .findFirst()
+    public TaskDto update(long id, TaskDto taskDto) {
+        Task updateTask = repository.findById(id)
                 .orElseThrow(() -> new NoSuchTaskException("Task with id " + id + " not found!"));
-    }
 
-    @Override
-    public Task update(long id, Task task) {
-        taskList.removeIf(t -> t.getId() == id);
+        updateTask.setName(taskDto.getName());
 
-        task.setId(id);
-        taskList.add(task);
-
-        return task;
+        return TaskConverter.toDto(repository.save(updateTask));
     }
 
     @Override
     public void deleteById(long id) {
-        taskList.removeIf(t -> t.getId() == id);
+        Task task = repository.findById(id)
+                .orElseThrow(() -> new NoSuchTaskException("Task with id " + id + " not found!"));
+
+        repository.delete(task);
     }
 }

@@ -1,34 +1,27 @@
-package ru.diasoft.springbootcourse.domain;
+package ru.diasoft.springbootcourse.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.util.Set;
 
 /**
- * Сущность задачи.
+ * DTO для передачи задач.
  */
 @Data
-@Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "task")
-public class Task {
+public class TaskDto {
 
     /** Уникальный идентификатор задачи */
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     /** Название или описание задачи */
-    @Column(name = "name")
     private String name;
 
     /** Список комментариев к задаче */
-    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Comment> comments;
+    private Set<CommentDto> comments;
 }

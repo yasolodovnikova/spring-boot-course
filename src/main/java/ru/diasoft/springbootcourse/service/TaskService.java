@@ -1,6 +1,6 @@
 package ru.diasoft.springbootcourse.service;
 
-import ru.diasoft.springbootcourse.domain.Task;
+import ru.diasoft.springbootcourse.dto.TaskDto;
 
 import java.util.List;
 
@@ -15,14 +15,14 @@ public interface TaskService {
      * @param task объект задачи
      * @return созданная задача
      */
-    Task create(Task task);
+    TaskDto create(TaskDto task);
 
     /**
      * Получить все задачи.
      *
      * @return список задач
      */
-    List<Task> getAll();
+    List<TaskDto> getAll();
 
     /**
      * Найти задачу по ID.
@@ -30,7 +30,7 @@ public interface TaskService {
      * @param id идентификатор задачи
      * @return найденная задача
      */
-    Task getById(long id);
+    TaskDto getById(long id);
 
     /**
      * Обновить задачу по ID.
@@ -39,7 +39,7 @@ public interface TaskService {
      * @param task новая версия задачи
      * @return обновлённая задача
      */
-    Task update(long id, Task task);
+    TaskDto update(long id, TaskDto task);
 
     /**
      * Удалить задачу по ID.

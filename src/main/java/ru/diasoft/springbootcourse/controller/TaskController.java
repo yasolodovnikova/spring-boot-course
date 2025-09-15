@@ -3,7 +3,7 @@ package ru.diasoft.springbootcourse.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import ru.diasoft.springbootcourse.domain.Task;
+import ru.diasoft.springbootcourse.dto.TaskDto;
 import ru.diasoft.springbootcourse.service.TaskService;
 
 import java.util.List;
@@ -27,7 +27,7 @@ public class TaskController {
      */
     @PostMapping("/task")
     @ResponseStatus(HttpStatus.CREATED)
-    public Task create(@RequestBody Task task) {
+    public TaskDto create(@RequestBody TaskDto task) {
         return taskService.create(task);
     }
 
@@ -38,7 +38,7 @@ public class TaskController {
      */
     @GetMapping("/task")
     @ResponseStatus(HttpStatus.OK)
-    public List<Task> getAll() {
+    public List<TaskDto> getAll() {
         return taskService.getAll();
     }
 
@@ -50,7 +50,7 @@ public class TaskController {
      */
     @GetMapping("/task/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Task getById(@PathVariable long id) {
+    public TaskDto getById(@PathVariable long id) {
         return taskService.getById(id);
     }
 
@@ -63,7 +63,7 @@ public class TaskController {
      */
     @PutMapping("/task/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Task update(@PathVariable long id, @RequestBody Task task) {
+    public TaskDto update(@PathVariable long id, @RequestBody TaskDto task) {
         return taskService.update(id, task);
     }
 
