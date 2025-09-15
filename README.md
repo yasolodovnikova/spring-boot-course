@@ -24,3 +24,8 @@
 
 - **Основная реализация** — по заданию:  
   [module-03-task-crud](https://github.com/yasolodovnikova/spring-boot-course/tree/module-03-task-crud)
+
+## Задание 4
+
+- **Основная реализация** — по заданию:  
+  [module-04-task-crud-h2](https://github.com/yasolodovnikova/spring-boot-course/tree/module-04-task-crud-h2)
