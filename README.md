@@ -40,8 +40,8 @@ src/main/resources/
 
 ## Как запустить
 
-1. Поднять Postgres в Docker
+1. Поднять Postgres в Docker;
 
-2. Запустить Spring Boot приложение
+2. Запустить Spring Boot приложение;
 
 3. Liquibase автоматически применит миграции и загрузит данные.
