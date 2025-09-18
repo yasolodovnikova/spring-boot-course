@@ -29,3 +29,13 @@
 
 - **Основная реализация** — по заданию:  
   [module-04-task-crud-h2](https://github.com/yasolodovnikova/spring-boot-course/tree/module-04-task-crud-h2)
+
+## Задание 5
+
+- **Основная реализация** — по заданию:  
+  [module-05-liquibase](https://github.com/yasolodovnikova/spring-boot-course/tree/module-05-liquibase)
+
+## Задание 6
+
+- **Основная реализация** — по заданию:  
+  [module-06-transactions](https://github.com/yasolodovnikova/spring-boot-course/tree/module-06-transactions)
